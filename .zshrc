@@ -2,15 +2,15 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd nomatch notify
-unsetopt beep
-bindkey -e
+setopt autocd nomatch notify
+unsetopt appendhistory beep extendedglob
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _match _prefix
 zstyle ':completion:*' ignore-parents parent pwd ..
-zstyle ':completion:*' max-errors 1
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=* r:|=*'
+zstyle ':completion:*' max-errors 0
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' squeeze-slashes truezstyle :compinstall filename "$HOME/.zshrc"
 
@@ -32,7 +32,7 @@ ZSH_THEME="colorface"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -49,9 +49,11 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sprunge)
+plugins=(git screen vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH="$HOME/bin:$PATH"
+export EDITOR="vim"
+export PAGER="vimpager"

@@ -32,7 +32,6 @@ setprompt () {
   #ZSH_THEME_TERM_TITLE_IDLE="$pr1cs$wdexpn$gpsexpn"
 
   PS1="$state$pr1h$pr1c$wdexpn$gpexpn$state$pr1t$endl$pr2"
-  RPROMPT=""
 }
 
 precmd () {
